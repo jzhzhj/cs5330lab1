@@ -3,11 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def combine_masks(color_mask, edge_mask):
-    """
-    Combine color thresholding mask and edge detection mask.
-    Logic: Keep the regions identified as sky in the color_mask
-           and refine edges using edge_mask.
-    """
+
     # Invert edge mask to get regions without edges
     inverted_edge_mask = cv2.bitwise_not(edge_mask)
 
@@ -17,7 +13,7 @@ def combine_masks(color_mask, edge_mask):
     return combined_mask
 
 # Load the image
-image_path = '/Users/mac2022/Desktop/b.jpeg'
+image_path = 'EastVan.jpeg'
 image = cv2.imread(image_path)
 
 # Convert the image to the HSV color space
